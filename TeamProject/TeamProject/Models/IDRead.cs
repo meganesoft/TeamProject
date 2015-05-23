@@ -17,14 +17,11 @@ namespace TeamProject.Models
 
 		private string FilePass;
 
-		private int ID;
+		public string ID_library {set;get;}
 
 		Process p;
+		ProcessStartInfo psInfo = new ProcessStartInfo();
 
-		public int get_ID()
-		{
-			return ID;
-		}
 
 		/*public void Get_Text()
 		{
@@ -44,9 +41,12 @@ namespace TeamProject.Models
 
 		public IDRead(string filepass)
 		{
+			FilePass = filepass;
+
+			
 			string command = filepass;
 
-			ProcessStartInfo psInfo = new ProcessStartInfo();
+			
 
 			psInfo.FileName = command; // 実行するファイル
 			psInfo.CreateNoWindow = true; // コンソール・ウィンドウを開かない
@@ -55,18 +55,26 @@ namespace TeamProject.Models
 			psInfo.RedirectStandardOutput = true; // 標準出力をリダイレクト
 
 			this.p = Process.Start(psInfo); // アプリの実行開始
-			string output = p.StandardOutput.ReadToEnd();	// 標準出力の読み取り
-
-			this.ID = int.Parse(output);
-			Console.WriteLine(ID);	
+			
+			
+				
 			
 		}
 
-		public async void Reading_Id()
+		public async Task<string> Reading_Id()
 		{
-			this.ID = int.Parse(p.StandardOutput);
+			string Plane_ID = await Task.FromResult<string>(p.StandardOutput.ToString());
+
+			this.ID_library = Plane_ID;
+			return this.ID_library;
 		}
 
+		void Reading_ID()
+		{
+			
+		}
+
+		
 		
 
 	}

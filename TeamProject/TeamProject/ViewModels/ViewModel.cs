@@ -44,7 +44,7 @@ namespace TeamProject.ViewModels
 
 		public void Read_ID()
 		{
-			this.Price_Bind = IR.get_ID().ToString();
+			this.Price_Bind = IR.ID_library;
 		}
 
 	}
