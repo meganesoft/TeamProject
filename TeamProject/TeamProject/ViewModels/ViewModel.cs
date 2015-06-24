@@ -12,12 +12,16 @@ namespace TeamProject.ViewModels
 	{
 		//モデルを書く(未実装)
 		TestModel tm = new TestModel();
-		IDRead IR = new IDRead(@"C:\Users\Meganesoft\Documents\Visual Studio 2015\Projects\TeamProject\Resource\Python_test.exe");
+		IDRead IR;
+		Random rnd = new Random();
+		Price Price_Operation;
 		public SampleCommand Command { get; set; }
 		
 
 		private string price;
-
+		private string price_q;
+		private string coint_c;
+		
 		public string Price_Bind
 		{			
 			get { return price; }
@@ -28,23 +32,35 @@ namespace TeamProject.ViewModels
 			}
 		}
 
+
+		public string Price_Q_Bind
+		{
+			get {return price_q;}
+			set
+			{
+				this.price_q = value;
+				NotifyPropertyChanged("Price_Q_Bind");
+			}
+		}
+
+		
+
 		public ViewModel()
 		{
-			this.Command = new SampleCommand(new EventDelegare(Sum));
+			
+			this.Command = new SampleCommand(new EventDelegare(Read_ID));
+			this.Price_Bind = "0";			
 			tm = new TestModel();
-			this.Price_Bind = "0";
-			IR = new IDRead(@"C:\Users\Meganesoft\Documents\Visual Studio 2015\Projects\TeamProject\Resource\Python_test.exe");
+			IR = new IDRead(@"C:\Users\Meganesoft\Documents\Visual Studio 2015\Projects\TeamProject\TeamProject\Resource\exe.win32-2.7\icread.exe");
+			Price_Operation = new Price(rnd.Next(100, 1000));
 			
 		}
 
-		public void Sum()
-		{
-			this.Price_Bind = tm.Draw(int.Parse(Price_Bind)).ToString();
-		}
 
-		public void Read_ID()
+		public async void Read_ID()
 		{
-			this.Price_Bind = IR.ID_library;
+			await IR.Reading_Id();
+			this.Price_Bind = IR.get_denomination();
 		}
 
 	}

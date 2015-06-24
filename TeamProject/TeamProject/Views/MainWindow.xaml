@@ -19,30 +19,72 @@
                 To="300"
                 Duration="0:0:5"/>
         </Storyboard>
+       
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="13*"/>
-            <ColumnDefinition Width="34*"/>
+          
+            <ColumnDefinition Width="34*"/>          
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="200"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="200*"/>
+            <RowDefinition Height="100*"/>
         </Grid.RowDefinitions>
-        <Canvas Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Honeydew" Grid.ColumnSpan="2">
-            <Label x:Name="label" Canvas.Left="118" Background="Yellow" Canvas.Top="31" Height="136" Width="280" 
-                   Content="{Binding Path=Price_Bind}" Foreground="YellowGreen" FontSize="80" Loaded="label_Loaded" HorizontalContentAlignment="Center">
-
-            </Label>
-            <Button x:Name="button" Content="会計" Canvas.Left="432" Canvas.Top="172" Width="75">
+        <!--ここに問題を出します-->
+        <Canvas x:Name="mycanvas" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Honeydew" Grid.ColumnSpan="2">
+            <Border Canvas.Left="120" Background="LightYellow" Canvas.Top="10" Height="136" Width="280" BorderThickness="8" CornerRadius="8" BorderBrush="Tomato">
+                <Label x:Name="label" Canvas.Left="10" Background="Yellow" Canvas.Top="10" Height="130" Width="270" 
+                   Content="{Binding Path=Price_Q_Bind}" Foreground="YellowGreen" FontSize="80" Loaded="label_Loaded" HorizontalContentAlignment="Center">
+                </Label>
+            </Border>
+            <TextBox HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="106" Width="142" Text="{Binding Price_Bind}" Canvas.Left="375"></TextBox>
+            <Button x:Name="button" Content="Read" Canvas.Left="432" Canvas.Top="172" Width="75" Click="button_Click_1">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="LightBlue" CornerRadius="30" Padding="10" BorderThickness="0,0,3,3" BorderBrush="Gray">
+                            <TextBlock Text="読み込み" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+                <!--バインディングでコマンドを送る(日本語ガバガバ)-->
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="Click">
                         <i:InvokeCommandAction Command="{Binding Command }" />
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
-
             </Button>
         </Canvas>
-        <Canvas HorizontalAlignment="Left" Background="AliceBlue" Height="118" Margin="0,0,0,-67" Grid.Row="1" VerticalAlignment="Top" Width="517" Grid.ColumnSpan="2"/>
+        
+        
+        <!--項目を作るYO!-->
+        <ItemsControl ItemsSource="{Binding IndexData}" Grid.Row="1">
+            <ItemsControl.Template>
+                <ControlTemplate TargetType="ItemsControl">
+                    <Border BorderThickness="1"
+                            BorderBrush="Black"
+                            Background="Orange">  
+                        <WrapPanel Margin="10"
+                                   IsItemsHost="True"/>
+                    </Border>
+                </ControlTemplate>               
+            </ItemsControl.Template>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Margin="5">
+                        <Run Text="{Binding CoinType}" FontSize="15"/>
+                        <LineBreak/>
+                        <Run Text="{Binding CoinCount}"/>                    
+                    </TextBlock>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <!--できたYO-->
+        
+        <!--
+        <Canvas HorizontalAlignment="Left" Background="AliceBlue" Height="106" Grid.Row="1" VerticalAlignment="Top" Width="517" Grid.ColumnSpan="2"/>
+        -->
+    
+           
+        
     </Grid>
 </Window>

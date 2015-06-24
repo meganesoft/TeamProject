@@ -23,3 +23,11 @@ C:\Users\Meganesoft\documents\visual studio 2015\Projects\TeamProject\TeamProjec
 C:\Users\Meganesoft\documents\visual studio 2015\Projects\TeamProject\TeamProject\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
 C:\Users\Meganesoft\documents\visual studio 2015\Projects\TeamProject\TeamProject\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
 C:\Users\Meganesoft\documents\visual studio 2015\Projects\TeamProject\TeamProject\obj\Debug\Views\MainWindow.baml
+C:\Users\Meganesoft\documents\visual studio 2015\Projects\TeamProject\TeamProject\bin\Debug\EntityFramework.dll
+C:\Users\Meganesoft\documents\visual studio 2015\Projects\TeamProject\TeamProject\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Meganesoft\documents\visual studio 2015\Projects\TeamProject\TeamProject\bin\Debug\System.Data.SQLite.dll
+C:\Users\Meganesoft\documents\visual studio 2015\Projects\TeamProject\TeamProject\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Meganesoft\documents\visual studio 2015\Projects\TeamProject\TeamProject\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Meganesoft\documents\visual studio 2015\Projects\TeamProject\TeamProject\bin\Debug\EntityFramework.xml
+C:\Users\Meganesoft\documents\visual studio 2015\Projects\TeamProject\TeamProject\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Meganesoft\documents\visual studio 2015\Projects\TeamProject\TeamProject\bin\Debug\System.Data.SQLite.xml

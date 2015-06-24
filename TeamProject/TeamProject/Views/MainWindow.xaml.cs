@@ -16,6 +16,7 @@ using TeamProject.Models;
 using TeamProject.ViewModels;
 using System.Threading;
 
+
 namespace TeamProject.Views
 {
 	/// <summary>
@@ -27,27 +28,34 @@ namespace TeamProject.Views
 		{
 			InitializeComponent();
 			this.DataContext = new ViewModel();
+			this.DataContext = new Coin_ViewModel();
 			
 		}
-		public static string filepass = @"..\ReSource\Python_test.exe";
+		//public static string filepass = @"..\ReSource\Python_test.exe";
 		TestModel T_Model = new TestModel();
-		IDRead IR = new IDRead(@"C:\Users\Meganesoft\Documents\Visual Studio 2015\Projects\TeamProject\TeamProject\Resource\Console_Test.exe");
+		//IDRead IR = new IDRead(@"C:\Users\Meganesoft\Documents\Visual Studio 2015\Projects\TeamProject\TeamProject\bin\Debug\Console_Test.exe");
 		
 
 		private void label_Loaded(object sender, RoutedEventArgs e)
 		{
 			//this.DataContext = new { Price_Bind = T_Model.Draw(50) };
 			//数値の表示
+			
 		}
 
 		private void button_Click(object sender, RoutedEventArgs e)
 		{
-
+			
 		}
 
-		private void Window_ContentRendered(object sender, EventArgs e)
+		private  void Window_ContentRendered(object sender, EventArgs e)
 		{
 			
+		}
+
+		private void button_Click_1(object sender, RoutedEventArgs e)
+		{
+
 		}
 	}
 }

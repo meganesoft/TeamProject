@@ -3,33 +3,45 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TeamProject.ViewModels;
+using System.Windows;
 
 namespace TeamProject.Models
 {
 	class Price
 	{
-		//値段の初期値(コンストラクタ)
-		public Price(int x)
-		{
-			this.Price_Original = x;
-			Price_Bind = x;
-		}
-
-		private int Price_Original;
-
+		//提示用の値の初期値を保持する変数
+		private int Price_Original;		
 		//ゲーム内で使う提示用の値段
 		private int Price_Total;
+		//読込んできた値段を司る変数
+		public int Price_Q_Bind { get; set; }
+		
+		
 
-		public int Price_Bind { get; set; }
+		//値段の初期値(コンストラクタ)
+		public Price(int Setting_Price)
+		{
+			this.Price_Original = Setting_Price;
+			Price_Total = Price_Original;		
+		}
 
-		public int get_priceOL()
+		//提示用の値の初期値の呼び出し
+		public int get_Price_Original()
 		{
 			return Price_Original;
 		}
 
-		public void Insert_Price(int price)
+		//提示用値の呼び出し
+		public int get_Price_Total()
 		{
-			this.Price_Original = price;
+			return this.Price_Total;
+		}
+
+		//新しくゲームを始める時用の初期値書き換え
+		public void Insert_Price(int Setting_Price)
+		{
+			this.Price_Original = Setting_Price;
 		}
 
 		//提示された値段から金額分を引く
@@ -39,29 +51,27 @@ namespace TeamProject.Models
 		}
 	
 		//加減算の結果の判定
-		public int Coin_Judge(int Price_Total)
+		public int Coin_Judge(int Price_Total,int coin_price)
 		{		
-			if (Price_Total > 0) {
+			if (Price_Total == 0) {
+				Clear_Game();
 				return 0;
-			}
-			if (Price_Total < 0)
+			}else if (Price_Total < 0)
 			{
-				return 1;
+				return Kill_Price(Price_Total, coin_price);
 			}
-			else
-			{
-				return 2;
-			}
+			return 0;
+			
 		}	
 	
 		
 	
-		public int Price_Kill(int price_total,int coin_price)
+		public int Kill_Price(int price_total,int coin_price)
 		{
 			price_total -= coin_price;
 			if (this.Price_Total < 0)
 			{
-				return Price_Kill(price_total, coin_price);
+				return Kill_Price(price_total, coin_price);
 			}
 			else
 			{
@@ -69,7 +79,13 @@ namespace TeamProject.Models
 			}
 		}
 
-		public void greed_Price()
+
+		public void Clear_Game()
+		{
+			MessageBox.Show("ゲームクリア!");		
+		}
+
+		public void Greed_Price()
 		{
 
 		}
