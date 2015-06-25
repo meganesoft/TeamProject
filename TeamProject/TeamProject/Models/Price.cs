@@ -56,16 +56,15 @@ namespace TeamProject.Models
 			if (Price_Total == 0) {
 				Clear_Game();
 				return 0;
-			}else if (Price_Total < 0)
+			}
+			else if (Price_Total < 0)
 			{
 				return Kill_Price(Price_Total, coin_price);
 			}
 			return 0;
 			
 		}	
-	
-		
-	
+			
 		public int Kill_Price(int price_total,int coin_price)
 		{
 			price_total -= coin_price;

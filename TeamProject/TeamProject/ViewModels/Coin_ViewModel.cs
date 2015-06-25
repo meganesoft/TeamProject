@@ -13,19 +13,13 @@ namespace TeamProject.ViewModels
 		//バインディングリスト
 		public List<Coin_Index> IndexData { get; set; }
 
-		//効果の種類をまとめたリスト
-		public List<string> Index_Palameter = new List<string> { "1", "10", "50", "100", "500" };
+		//Coinクラス
+		Coin Coin_Op = new Coin();
 
 		public Coin_ViewModel()
 		{
-			this.IndexData = new List<Coin_Index>
-			{
-				new Coin_Index {CoinType = Index_Palameter[0],CoinCount = "0" },
-				new Coin_Index {CoinType = Index_Palameter[1],CoinCount = "0" },
-				new Coin_Index {CoinType = Index_Palameter[2],CoinCount = "0" },
-				new Coin_Index {CoinType = Index_Palameter[3],CoinCount = "0" },
-				new Coin_Index {CoinType = Index_Palameter[4],CoinCount = "0" },
-			};
+			this.IndexData = Coin_Op.Coin_Index_create();
+
 		}
 	}
 }
