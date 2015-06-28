@@ -19,12 +19,12 @@
                 To="300"
                 Duration="0:0:5"/>
         </Storyboard>
-       
+
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-          
-            <ColumnDefinition Width="34*"/>          
+
+            <ColumnDefinition Width="34*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="200*"/>
@@ -54,37 +54,37 @@
                 </i:Interaction.Triggers>
             </Button>
         </Canvas>
-        
-        
+
+
         <!--項目を作るYO!-->
         <ItemsControl ItemsSource="{Binding IndexData}" Grid.Row="1">
             <ItemsControl.Template>
                 <ControlTemplate TargetType="ItemsControl">
                     <Border BorderThickness="1"
                             BorderBrush="Black"
-                            Background="Orange">  
+                            Background="Orange">
                         <WrapPanel Margin="10"
                                    IsItemsHost="True"/>
                     </Border>
-                </ControlTemplate>               
+                </ControlTemplate>
             </ItemsControl.Template>
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Margin="5">
                         <Run Text="{Binding CoinType}" FontSize="15"/>
                         <LineBreak/>
-                        <Run Text="{Binding CoinCount}"/>                    
+                        <Run Text="{Binding CoinCount}"/>
                     </TextBlock>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
         <!--できたYO-->
-        
+
         <!--
         <Canvas HorizontalAlignment="Left" Background="AliceBlue" Height="106" Grid.Row="1" VerticalAlignment="Top" Width="517" Grid.ColumnSpan="2"/>
         -->
-    
-           
-        
+
+
+
     </Grid>
 </Window>

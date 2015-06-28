@@ -10,16 +10,16 @@ namespace TeamProject.ViewModels
 	class Coin_Index:ViewModelBase
 	{
 		//ゲーム内で処理する貨幣の金額	
-		private string coin_t_c;
+		private string _CoinCount;
 
 		public string CoinType {get;set;}
 
 		public string CoinCount
 		{
-			get { return coin_t_c; }
+			get { return _CoinCount; }
 			set
 			{
-				this.coin_t_c = value;
+				this._CoinCount = value;
 				NotifyPropertyChanged("CoinCount");
 			}
 		}

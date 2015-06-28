@@ -12,6 +12,7 @@ namespace TeamProject.ViewModels
 		
 		//バインディングリスト
 		public List<Coin_Index> IndexData { get; set; }
+		
 
 		//Coinクラス
 		Coin Coin_Op = new Coin();
@@ -19,7 +20,7 @@ namespace TeamProject.ViewModels
 		public Coin_ViewModel()
 		{
 			this.IndexData = Coin_Op.Coin_Index_create();
-
+			
 		}
 	}
 }

@@ -17,9 +17,9 @@ namespace TeamProject.Models
 	{
 		private string Plane_ID="";
 		private string FilePass;
-		private string db_file = @"C:\Users\Meganesoft\Documents\Visual Studio 2015\Projects\TeamProject\TeamProject\Resource\ictags_meteo.db";
+		private string DB_File = @"C:\Users\Meganesoft\Documents\Visual Studio 2015\Projects\TeamProject\TeamProject\Resource\ictags_meteo.db";
 		public string ID_library {set;get;}
-		private int denomination_library {set;get;}
+		private int Denomination_Library {set;get;}
 
 		Process p;
 		ProcessStartInfo psInfo = new ProcessStartInfo();
@@ -61,7 +61,7 @@ namespace TeamProject.Models
 		public void Call_DataBase()
 		{
 			//Data Source=でデータベースファイルを指定
-			using (var conn = new SQLiteConnection("Data Source=" + db_file))
+			using (var conn = new SQLiteConnection("Data Source=" + DB_File))
 			{
 				conn.Open();
 				using (SQLiteCommand command = conn.CreateCommand())
@@ -74,7 +74,7 @@ namespace TeamProject.Models
 						{
 							//denominationキーを読みだし、denomination_librarypropetyに格納
 							int denomination = Convert.ToInt32(reader["denomination"].ToString());
-							denomination_library = denomination;							
+							Denomination_Library = denomination;							
 						}			
 					}
 				}
@@ -84,7 +84,7 @@ namespace TeamProject.Models
 
 		public string get_denomination()
 		{
-			return denomination_library.ToString();
+			return Denomination_Library.ToString();
 		}
 	}
 }
