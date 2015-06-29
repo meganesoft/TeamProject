@@ -40,18 +40,14 @@ namespace TeamProject.Models
 		//読み込んだ数値と判定用のリスト照らし合わせて、どの硬化項目にカウントを追加するか判断する
 		public void Coin_Index_Judgement(List<Coin_Index> Coin_Index_List,int Judege_Number)
 		{
-			for(int count = 0;count < Index_Palameter.Count;count++)
-			{
-				if(Judege_Number == int.Parse(Index_Palameter[count]))
-				{
-					//Coin_Index_List.Find(x => x.CoinCount)
-					
-				}
-			}
+			//読み込んできた値と一致するCoin.Typeを含むリスト項目を抽出する
+			Coin_Index Coin_Found_Index = Coin_Index_List.Find(x => int.Parse(x.CoinType) == Judege_Number);
+			Coin_Found_Index.CoinCount = Return_Plus_Coin(Coin_Found_Index.CoinCount);	
+			
 			
 		}
 
-		public string Return_Plus_Coin(List<Coin_Index> Coin_Index_List,int Coin_Index_Count)
+		public string Return_Plus_Coin(string Coin_Index_Count)
 		{
 			//１を加算して文字列に変換して返す。
 			return (Convert.ToInt32(Coin_Index_Count)+PlusOne).ToString();		
