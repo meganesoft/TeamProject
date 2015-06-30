@@ -15,8 +15,10 @@ namespace TeamProject.Models
 {
 	class IDRead
 	{
+		private string Relative_FilePath = @"..\..\Resource\exe.win32-2.7\icread.exe";
+		private string Absolute_FIlePath = "";
 		private string Plane_ID="";
-		private string FilePass;
+		private string FilePath = "";
 		private string DB_File = @"C:\Users\Meganesoft\Documents\Visual Studio 2015\Projects\TeamProject\TeamProject\Resource\ictags_meteo.db";
 		public string ID_library {set;get;}
 		private int Denomination_Library {set;get;}
@@ -26,23 +28,36 @@ namespace TeamProject.Models
 		Dictionary<string,int> DB_Dictionary = new Dictionary<string,int>();
 	
 
-		public IDRead(string filepass)
+		public IDRead()
 		{
-			FilePass = filepass;
+			FilePath = System.IO.Path.GetFullPath(Relative_FilePath);						
+		}
+
 		
-			string command = filepass;
 
-			psInfo.FileName = command; // 実行するファイル
-			psInfo.CreateNoWindow = true; // コンソール・ウィンドウを開かない
-			psInfo.UseShellExecute = false; // シェル機能を使用しない
-
-			psInfo.RedirectStandardOutput = true; // 標準出力をリダイレクト
-
-			if((Process.GetCurrentProcess().ProcessName).Length > 1)
+		//ファイルパスを読み込んでプロセスをスタートする
+		public void Create_Process()
+		{
+			if(FilePath != null)
 			{
-				this.p = Process.Start(psInfo); // アプリの実行開始
+				string command = FilePath;
+
+				psInfo.FileName = command; // 実行するファイル
+				psInfo.CreateNoWindow = true; // コンソール・ウィンドウを開かない
+				psInfo.UseShellExecute = false; // シェル機能を使用しない
+
+				psInfo.RedirectStandardOutput = true; // 標準出力をリダイレクト
+
+				if((Process.GetCurrentProcess().ProcessName).Length > 1)
+				{
+					this.p = Process.Start(psInfo); // アプリの実行開始
+				}
+				else
+				{
+					System.Windows.MessageBox.Show("ファイルパスが設定されてないです。");
+				}
 			}
-						
+			
 		}
 
 		public async Task Reading_Id()

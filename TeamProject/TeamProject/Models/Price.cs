@@ -15,7 +15,7 @@ namespace TeamProject.Models
 		//ゲーム内で使う提示用の値段
 		private int Price_Total;
 		//読込んできた値段を司る変数
-		public int Price_Q_Bind { get; set; }
+		private int Coin_Price_Total = 0;
 		
 		
 
@@ -26,20 +26,46 @@ namespace TeamProject.Models
 			Price_Total = Price_Original;		
 		}
 
-		//提示用の値の初期値の呼び出し
-		public int get_Price_Original()
+		public void Add_Price(int Add_Coin)
 		{
-			return Price_Original;
+			Coin_Price_Total += Add_Coin;
+		}
+
+		public void Judge_Price()
+		{
+			if(Price_Total > Coin_Price_Total)
+			{
+				//足りない金額を出す
+				int Difference = Price_Total - Coin_Price_Total;
+				System.Windows.MessageBox.Show(Difference.ToString() + "足りません");
+			}
+			else if(Price_Total < Coin_Price_Total)
+			{
+				//お釣はいくらか出す
+				int Difference = Coin_Price_Total - Price_Total;
+				System.Windows.MessageBox.Show("お釣は" + Difference.ToString() + "円です");
+			}
+			else
+			{
+				//丁度払えました
+				System.Windows.MessageBox.Show("丁度になります");
+			}
+		}
+
+		//提示用の値の初期値の呼び出し
+		public string get_Price_Original()
+		{
+			return Price_Original.ToString();
 		}
 
 		//提示用値の呼び出し
-		public int get_Price_Total()
+		public string get_Price_Total()
 		{
-			return this.Price_Total;
+			return this.Price_Total.ToString();
 		}
 
 		//新しくゲームを始める時用の初期値書き換え
-		public void Insert_Price(int Setting_Price)
+		public void ReStart_Insert_Price(int Setting_Price)
 		{
 			this.Price_Original = Setting_Price;
 		}
@@ -84,9 +110,6 @@ namespace TeamProject.Models
 			MessageBox.Show("ゲームクリア!");		
 		}
 
-		public void Greed_Price()
-		{
-
-		}
+		
 	}
 }

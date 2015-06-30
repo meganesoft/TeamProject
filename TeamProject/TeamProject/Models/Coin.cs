@@ -11,7 +11,7 @@ namespace TeamProject.Models
 	class Coin
 	{
 		//数値判定用リスト
-		private List<string> Index_Palameter = new List<string> { "1", "10", "50", "100", "500" };
+		private List<string> Index_Palameter = new List<string> { "1", "10", "50", "100", "500","1000"};
 
 		//Plus_Coin用の変数
 		private int PlusOne = 1;
@@ -29,19 +29,21 @@ namespace TeamProject.Models
 		{
 			return new List<Coin_Index>
 			{
+				
 				new Coin_Index {CoinType = Index_Palameter[0],CoinCount = "0" },
 				new Coin_Index {CoinType = Index_Palameter[1],CoinCount = "0" },
 				new Coin_Index {CoinType = Index_Palameter[2],CoinCount = "0" },
 				new Coin_Index {CoinType = Index_Palameter[3],CoinCount = "0" },
 				new Coin_Index {CoinType = Index_Palameter[4],CoinCount = "0" },
+				new Coin_Index {CoinType = Index_Palameter[5],CoinCount = "0" },
 			};
 		}
 		
 		//読み込んだ数値と判定用のリスト照らし合わせて、どの硬化項目にカウントを追加するか判断する
-		public void Coin_Index_Judgement(List<Coin_Index> Coin_Index_List,int Judege_Number)
+		public void Coin_Index_Judgement(List<Coin_Index> Coin_Index_List,string Judege_Number)
 		{
 			//読み込んできた値と一致するCoin.Typeを含むリスト項目を抽出する
-			Coin_Index Coin_Found_Index = Coin_Index_List.Find(x => int.Parse(x.CoinType) == Judege_Number);
+			Coin_Index Coin_Found_Index = Coin_Index_List.Find(x => x.CoinType == Judege_Number);
 			Coin_Found_Index.CoinCount = Return_Plus_Coin(Coin_Found_Index.CoinCount);	
 			
 			

@@ -27,8 +27,9 @@ namespace TeamProject.Views
 		public MainWindow()
 		{
 			InitializeComponent();
+			
+			
 			this.DataContext = new ViewModel();
-			this.DataContext = new Coin_ViewModel();
 			
 		}
 		//public static string filepass = @"..\ReSource\Python_test.exe";

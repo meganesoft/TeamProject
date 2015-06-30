@@ -12,15 +12,26 @@ namespace TeamProject.ViewModels
 	{
 		//モデルを書く(未実装)
 		TestModel tm = new TestModel();
+		//PasoriからDBに接続するクラス
 		IDRead IR;
+		//ゲーム提示用ランダムクラス
 		Random rnd = new Random();
+		//数字を司るクラス
 		Price Price_Operation;
+		//コマンドクラス
+		//読み取り用コマンド
 		public SampleCommand Command { get; set; }
+		//清算コマンド
+		public SampleCommand JudgeTotal { get; set; }
+		//バインディングリスト
+		public List<Coin_Index> IndexData { get; set; }		
+		//Coinクラス
+		Coin Coin_Op = new Coin();
 		
 
-		private string price;
+		private string price = "0";
 		private string price_q;
-		private string coint_c;
+		
 		
 		public string Price_Bind
 		{			
@@ -46,22 +57,27 @@ namespace TeamProject.ViewModels
 		
 
 		public ViewModel()
-		{
-			
+		{			
 			this.Command = new SampleCommand(new EventDelegare(Read_ID));
-			this.Price_Bind = "0";			
-			tm = new TestModel();
-			IR = new IDRead(@"C:\Users\Meganesoft\Documents\Visual Studio 2015\Projects\TeamProject\TeamProject\Resource\exe.win32-2.7\icread.exe");
+			this.JudgeTotal = new SampleCommand(new EventDelegare(Judge));	
+			this.IndexData = Coin_Op.Coin_Index_create();	
+			IR = new IDRead();			
+			IR.Create_Process();
 			Price_Operation = new Price(rnd.Next(100, 1000));
-			
+			Price_Q_Bind = Price_Operation.get_Price_Total();
 		}
 
 
 		public async void Read_ID()
 		{
 			await IR.Reading_Id();
-			this.Price_Bind = IR.get_denomination();
+			Coin_Op.Coin_Index_Judgement(this.IndexData,IR.get_denomination());
+			Price_Operation.Add_Price(int.Parse(IR.get_denomination()));
 		}
 
+		public void Judge()
+		{
+			Price_Operation.Judge_Price();
+		}
 	}
 }

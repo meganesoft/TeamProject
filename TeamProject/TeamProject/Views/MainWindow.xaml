@@ -53,6 +53,20 @@
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </Button>
+            <Button x:Name="button1" Content="Button" Canvas.Left="333" Canvas.Top="172" Width="76">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="LightBlue" CornerRadius="30" Padding="10" BorderThickness="0,0,3,3" BorderBrush="Gray">
+                            <TextBlock Text="清算" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <i:InvokeCommandAction Command="{Binding JudgeTotal }" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Button>
         </Canvas>
 
 
@@ -70,11 +84,15 @@
             </ItemsControl.Template>
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Margin="5">
-                        <Run Text="{Binding CoinType}" FontSize="15"/>
-                        <LineBreak/>
-                        <Run Text="{Binding CoinCount}"/>
-                    </TextBlock>
+                    <Border BorderBrush="DimGray" BorderThickness="2">
+                        <TextBlock Margin="5" >                        
+                            <Run Text="{Binding CoinType}" FontSize="15"/>
+                            <Run Text=":円"/>
+                            <LineBreak/>                          
+                            <Run Text="{Binding CoinCount}" FontSize="15"/>                          
+                            <Run Text=":枚"/>
+                         </TextBlock>
+                    </Border>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
