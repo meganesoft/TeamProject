@@ -15,7 +15,7 @@ namespace TeamProject.Models
 		//ゲーム内で使う提示用の値段
 		private int Price_Total;
 		//読込んできた値段を司る変数
-		private int Coin_Price_Total = 0;
+		protected int Coin_Price_Total;
 		
 		
 
@@ -28,7 +28,7 @@ namespace TeamProject.Models
 
 		public void Add_Price(int Add_Coin)
 		{
-			Coin_Price_Total += Add_Coin;
+			this.Coin_Price_Total += Add_Coin;
 		}
 
 		public void Judge_Price()
@@ -37,7 +37,7 @@ namespace TeamProject.Models
 			{
 				//足りない金額を出す
 				int Difference = Price_Total - Coin_Price_Total;
-				System.Windows.MessageBox.Show(Difference.ToString() + "足りません");
+				System.Windows.MessageBox.Show(Difference.ToString() + "円足りません");
 			}
 			else if(Price_Total < Coin_Price_Total)
 			{
@@ -68,6 +68,8 @@ namespace TeamProject.Models
 		public void ReStart_Insert_Price(int Setting_Price)
 		{
 			this.Price_Original = Setting_Price;
+			this.Price_Total = this.Price_Original;
+			this.Coin_Price_Total = 0;
 		}
 
 		//提示された値段から金額分を引く
@@ -76,20 +78,7 @@ namespace TeamProject.Models
 			this.Price_Total =  Price_Total - Coin_Price;
 		}
 	
-		//加減算の結果の判定
-		public int Coin_Judge(int Price_Total,int coin_price)
-		{		
-			if (Price_Total == 0) {
-				Clear_Game();
-				return 0;
-			}
-			else if (Price_Total < 0)
-			{
-				return Kill_Price(Price_Total, coin_price);
-			}
-			return 0;
 			
-		}	
 			
 		public int Kill_Price(int price_total,int coin_price)
 		{
@@ -103,13 +92,6 @@ namespace TeamProject.Models
 				return price_total;
 			}
 		}
-
-
-		public void Clear_Game()
-		{
-			MessageBox.Show("ゲームクリア!");		
-		}
-
 		
 	}
 }

@@ -13,14 +13,17 @@ namespace TeamProject.ViewModels
 		//バインディングリスト
 		public List<Coin_Index> IndexData { get; set; }
 		
-
 		//Coinクラス
 		Coin Coin_Op = new Coin();
 
+		//項目の枚数を増やす
 		public Coin_ViewModel()
 		{
-			this.IndexData = Coin_Op.Coin_Index_create();
-			
+			this.IndexData = Coin_Op.Coin_Index_create();		
 		}
+
+		
+
+
 	}
 }

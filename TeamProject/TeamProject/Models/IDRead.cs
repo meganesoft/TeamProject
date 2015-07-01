@@ -15,7 +15,7 @@ namespace TeamProject.Models
 {
 	class IDRead
 	{
-		private string Relative_FilePath = @"..\..\Resource\exe.win32-2.7\icread.exe";
+		private string Relative_FilePath = @"Resource\exe.win32-2.7\icread.exe";
 		private string Absolute_FIlePath = "";
 		private string Plane_ID="";
 		private string FilePath = "";
@@ -100,6 +100,11 @@ namespace TeamProject.Models
 		public string get_denomination()
 		{
 			return Denomination_Library.ToString();
+		}
+
+		public void Close_Process()
+		{
+			p.Close();
 		}
 	}
 }

@@ -8,7 +8,7 @@ using System.Windows.Input;
 
 namespace TeamProject.ViewModels
 {
-	class ViewModelBase : INotifyPropertyChanged
+	public	class ViewModelBase : INotifyPropertyChanged
 	{
 		public event PropertyChangedEventHandler PropertyChanged;
 

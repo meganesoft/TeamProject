@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -45,8 +46,7 @@ namespace TeamProject.Models
 			//読み込んできた値と一致するCoin.Typeを含むリスト項目を抽出する
 			Coin_Index Coin_Found_Index = Coin_Index_List.Find(x => x.CoinType == Judege_Number);
 			Coin_Found_Index.CoinCount = Return_Plus_Coin(Coin_Found_Index.CoinCount);	
-			
-			
+						
 		}
 
 		public string Return_Plus_Coin(string Coin_Index_Count)
@@ -54,6 +54,15 @@ namespace TeamProject.Models
 			//１を加算して文字列に変換して返す。
 			return (Convert.ToInt32(Coin_Index_Count)+PlusOne).ToString();		
 		}
+
+		public void Coin_Index_Clear(List<Coin_Index> Coin_Index_List)
+		{
+			Coin_Index_List.ForEach(x =>
+			{
+				x.CoinCount = "0";
+			});
+		}
+		
 		
 		
 			

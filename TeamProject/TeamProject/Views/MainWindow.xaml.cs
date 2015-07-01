@@ -26,21 +26,14 @@ namespace TeamProject.Views
 	{
 		public MainWindow()
 		{
-			InitializeComponent();
-			
-			
+			InitializeComponent();			
 			this.DataContext = new ViewModel();
 			
 		}
-		//public static string filepass = @"..\ReSource\Python_test.exe";
-		TestModel T_Model = new TestModel();
-		//IDRead IR = new IDRead(@"C:\Users\Meganesoft\Documents\Visual Studio 2015\Projects\TeamProject\TeamProject\bin\Debug\Console_Test.exe");
 		
-
 		private void label_Loaded(object sender, RoutedEventArgs e)
 		{
-			//this.DataContext = new { Price_Bind = T_Model.Draw(50) };
-			//数値の表示
+			
 			
 		}
 

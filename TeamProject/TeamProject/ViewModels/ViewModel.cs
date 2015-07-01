@@ -18,21 +18,31 @@ namespace TeamProject.ViewModels
 		Random rnd = new Random();
 		//数字を司るクラス
 		Price Price_Operation;
+		//Coinクラス
+		Coin Coin_Op = new Coin();
+		//項目クラス
+		Coin_Index Coin_Index_Op = new Coin_Index();
+
 		//コマンドクラス
 		//読み取り用コマンド
 		public SampleCommand Command { get; set; }
 		//清算コマンド
 		public SampleCommand JudgeTotal { get; set; }
+		//項目バインディング
+		public SampleCommand Index_Action { get; set; }
+		//終了項目
+		public SampleCommand ShutDown { get; set; }
 		//バインディングリスト
-		public List<Coin_Index> IndexData { get; set; }		
-		//Coinクラス
-		Coin Coin_Op = new Coin();
+		public List<Coin_Index> IndexData { get; set; }
+		
+
+		
 		
 
 		private string price = "0";
 		private string price_q;
 		
-		
+		//テスト用
 		public string Price_Bind
 		{			
 			get { return price; }
@@ -59,7 +69,10 @@ namespace TeamProject.ViewModels
 		public ViewModel()
 		{			
 			this.Command = new SampleCommand(new EventDelegare(Read_ID));
-			this.JudgeTotal = new SampleCommand(new EventDelegare(Judge));	
+			this.JudgeTotal = new SampleCommand(new EventDelegare(Judge));
+			this.Index_Action = new SampleCommand(new EventDelegare(Coin_Index_Action));
+			this.ShutDown = new SampleCommand(new EventDelegare(Window_Close));
+			
 			this.IndexData = Coin_Op.Coin_Index_create();	
 			IR = new IDRead();			
 			IR.Create_Process();
@@ -78,6 +91,23 @@ namespace TeamProject.ViewModels
 		public void Judge()
 		{
 			Price_Operation.Judge_Price();
+			Price_Operation.ReStart_Insert_Price(rnd.Next(100, 1000));
+			Price_Q_Bind = Price_Operation.get_Price_Original();
+			Coin_Op.Coin_Index_Clear(this.IndexData);
+				
 		}
+
+		public void Coin_Index_Action()
+		{
+			Coin_Index_Op.Index_Count_Add();
+			Price_Operation.Add_Price(int.Parse(Coin_Index_Op.CoinType));
+		}
+
+		public void Window_Close()
+		{
+			IR.Close_Process();
+		}
+
+
 	}
 }

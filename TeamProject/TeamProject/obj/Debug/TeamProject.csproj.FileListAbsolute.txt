@@ -12,16 +12,6 @@ C:\Users\Meganesoft\documents\visual studio 2015\Projects\TeamProject\TeamProjec
 C:\Users\Meganesoft\documents\visual studio 2015\Projects\TeamProject\TeamProject\obj\Debug\TeamProject.pdb
 C:\Users\Meganesoft\documents\visual studio 2015\Projects\TeamProject\TeamProject\obj\Debug\Views\MainWindow.g.cs
 C:\Users\Meganesoft\documents\visual studio 2015\Projects\TeamProject\TeamProject\bin\Debug\System.Windows.Interactivity.dll
-C:\Users\Meganesoft\documents\visual studio 2015\Projects\TeamProject\TeamProject\bin\Debug\de\System.Windows.Interactivity.resources.dll
-C:\Users\Meganesoft\documents\visual studio 2015\Projects\TeamProject\TeamProject\bin\Debug\en\System.Windows.Interactivity.resources.dll
-C:\Users\Meganesoft\documents\visual studio 2015\Projects\TeamProject\TeamProject\bin\Debug\es\System.Windows.Interactivity.resources.dll
-C:\Users\Meganesoft\documents\visual studio 2015\Projects\TeamProject\TeamProject\bin\Debug\fr\System.Windows.Interactivity.resources.dll
-C:\Users\Meganesoft\documents\visual studio 2015\Projects\TeamProject\TeamProject\bin\Debug\it\System.Windows.Interactivity.resources.dll
-C:\Users\Meganesoft\documents\visual studio 2015\Projects\TeamProject\TeamProject\bin\Debug\ja\System.Windows.Interactivity.resources.dll
-C:\Users\Meganesoft\documents\visual studio 2015\Projects\TeamProject\TeamProject\bin\Debug\ko\System.Windows.Interactivity.resources.dll
-C:\Users\Meganesoft\documents\visual studio 2015\Projects\TeamProject\TeamProject\bin\Debug\ru\System.Windows.Interactivity.resources.dll
-C:\Users\Meganesoft\documents\visual studio 2015\Projects\TeamProject\TeamProject\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
-C:\Users\Meganesoft\documents\visual studio 2015\Projects\TeamProject\TeamProject\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
 C:\Users\Meganesoft\documents\visual studio 2015\Projects\TeamProject\TeamProject\obj\Debug\Views\MainWindow.baml
 C:\Users\Meganesoft\documents\visual studio 2015\Projects\TeamProject\TeamProject\bin\Debug\EntityFramework.dll
 C:\Users\Meganesoft\documents\visual studio 2015\Projects\TeamProject\TeamProject\bin\Debug\EntityFramework.SqlServer.dll
@@ -31,3 +21,6 @@ C:\Users\Meganesoft\documents\visual studio 2015\Projects\TeamProject\TeamProjec
 C:\Users\Meganesoft\documents\visual studio 2015\Projects\TeamProject\TeamProject\bin\Debug\EntityFramework.xml
 C:\Users\Meganesoft\documents\visual studio 2015\Projects\TeamProject\TeamProject\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Meganesoft\documents\visual studio 2015\Projects\TeamProject\TeamProject\bin\Debug\System.Data.SQLite.xml
+C:\Users\MeganeSoft\Documents\Visual Studio 2015\Projects\TeamProject\TeamProject\bin\Debug\Livet.dll
+C:\Users\MeganeSoft\Documents\Visual Studio 2015\Projects\TeamProject\TeamProject\bin\Debug\Microsoft.Expression.Interactions.dll
+C:\Users\MeganeSoft\Documents\Visual Studio 2015\Projects\TeamProject\TeamProject\bin\Debug\Livet.xml

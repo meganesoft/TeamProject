@@ -8,6 +8,7 @@
         xmlns:models="clr-namespace:TeamProject.Models"
         xmlns:viewmodels="clr-namespace:TeamProject.ViewModels"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:l="http://schemas.livet-mvvm.net/2011/wpf"
         mc:Ignorable="d"
         ContentRendered="Window_ContentRendered"
         Title="MainWindow" Height="350" Width="525">
@@ -21,6 +22,11 @@
         </Storyboard>
 
     </Window.Resources>
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Closed">
+            <i:InvokeCommandAction Command="{Binding ShutDown}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
     <Grid>
         <Grid.ColumnDefinitions>
 
@@ -37,7 +43,6 @@
                    Content="{Binding Path=Price_Q_Bind}" Foreground="YellowGreen" FontSize="80" Loaded="label_Loaded" HorizontalContentAlignment="Center">
                 </Label>
             </Border>
-            <TextBox HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="106" Width="142" Text="{Binding Price_Bind}" Canvas.Left="375"></TextBox>
             <Button x:Name="button" Content="Read" Canvas.Left="432" Canvas.Top="172" Width="75" Click="button_Click_1">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
@@ -68,7 +73,8 @@
                 </i:Interaction.Triggers>
             </Button>
         </Canvas>
-
+        
+        
 
         <!--項目を作るYO!-->
         <ItemsControl ItemsSource="{Binding IndexData}" Grid.Row="1">
@@ -83,13 +89,23 @@
                 </ControlTemplate>
             </ItemsControl.Template>
             <ItemsControl.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate >
                     <Border BorderBrush="DimGray" BorderThickness="2">
-                        <TextBlock Margin="5" >                        
-                            <Run Text="{Binding CoinType}" FontSize="15"/>
+                        <TextBlock Margin="5"
+                                   Width="50"> 
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Click">
+                                     <i:InvokeCommandAction Command="{Binding Index_Action}"/>
+                                </i:EventTrigger>
+                                <i:EventTrigger EventName="MouseUp">
+                                    <l:LivetCallMethodAction MethodTarget="{Binding}"
+                                                             MethodName="Index_Count_Add"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                            <Run Text="{Binding CoinType}" FontSize="10"/>
                             <Run Text=":円"/>
                             <LineBreak/>                          
-                            <Run Text="{Binding CoinCount}" FontSize="15"/>                          
+                            <Run Text="{Binding CoinCount}" FontSize="10"/>                          
                             <Run Text=":枚"/>
                          </TextBlock>
                     </Border>
@@ -97,12 +113,5 @@
             </ItemsControl.ItemTemplate>
         </ItemsControl>
         <!--できたYO-->
-
-        <!--
-        <Canvas HorizontalAlignment="Left" Background="AliceBlue" Height="106" Grid.Row="1" VerticalAlignment="Top" Width="517" Grid.ColumnSpan="2"/>
-        -->
-
-
-
     </Grid>
 </Window>

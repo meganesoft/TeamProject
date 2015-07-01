@@ -14,6 +14,9 @@ namespace TeamProject.ViewModels
 
 		public string CoinType {get;set;}
 
+		Coin Coin_OP = new Coin();
+		PriceChild PChild_OP = new PriceChild();
+
 		public string CoinCount
 		{
 			get { return _CoinCount; }
@@ -23,5 +26,13 @@ namespace TeamProject.ViewModels
 				NotifyPropertyChanged("CoinCount");
 			}
 		}
+
+		public void Index_Count_Add()
+		{
+			this.CoinCount = Coin_OP.Return_Plus_Coin(this.CoinCount);
+			PChild_OP.Change_Coin_Price_Total(int.Parse(this.CoinType));
+		}
+
+		
 	}
 }
