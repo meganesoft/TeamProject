@@ -90,6 +90,8 @@ namespace TeamProject.ViewModels
 
 		public void Judge()
 		{
+			Coin_Op.Convergence_Coin_Child(IndexData);
+			Price_Operation.Add_Coin_Total(Coin_Op.get_Coin_Instant());
 			Price_Operation.Judge_Price();
 			Price_Operation.ReStart_Insert_Price(rnd.Next(100, 1000));
 			Price_Q_Bind = Price_Operation.get_Price_Original();
@@ -107,6 +109,8 @@ namespace TeamProject.ViewModels
 		{
 			IR.Close_Process();
 		}
+
+
 
 
 	}

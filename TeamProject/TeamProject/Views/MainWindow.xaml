@@ -62,7 +62,7 @@
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border Background="LightBlue" CornerRadius="30" Padding="10" BorderThickness="0,0,3,3" BorderBrush="Gray">
-                            <TextBlock Text="清算" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <TextBlock Text="精算" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </Border>
                     </ControlTemplate>
                 </Button.Template>

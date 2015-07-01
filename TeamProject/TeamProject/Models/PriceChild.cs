@@ -15,9 +15,14 @@ namespace TeamProject.Models
 		{
 		}
 
-		public void Change_Coin_Price_Total(int Coin)
+		public void Add_Coin_Price_Child(int Coin)
 		{
 			base.Coin_Price_Total += Coin;
+		}
+
+		public int get_Coint_total_Child()
+		{
+			return get_Coin_Total();
 		}
 
 	}

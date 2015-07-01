@@ -52,6 +52,11 @@ namespace TeamProject.Models
 			}
 		}
 
+		public void Add_Coin_Total(int Coin)
+		{
+			Coin_Price_Total += Coin;
+		}
+
 		//提示用の値の初期値の呼び出し
 		public string get_Price_Original()
 		{
@@ -62,6 +67,11 @@ namespace TeamProject.Models
 		public string get_Price_Total()
 		{
 			return this.Price_Total.ToString();
+		}
+
+		public int get_Coin_Total()
+		{
+			return this.Coin_Price_Total;
 		}
 
 		//新しくゲームを始める時用の初期値書き換え

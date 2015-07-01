@@ -19,7 +19,9 @@ namespace TeamProject.Models
 
 		//エラー用数値
 		private int ErrorZero = 0;
-		
+
+		//一時金額格納
+		private int Instant_Coin_Total;
 
 		public Coin()
 		{
@@ -63,7 +65,18 @@ namespace TeamProject.Models
 			});
 		}
 		
-		
+		public void Convergence_Coin_Child( List<Coin_Index> Coin_Index_List)
+		{
+			Coin_Index_List.ForEach(x =>
+			{
+			  Instant_Coin_Total += x.Coin_Total_Child();
+			});
+		}
+
+		public int get_Coin_Instant()
+		{
+			return Instant_Coin_Total;
+		}
 		
 			
 	}
