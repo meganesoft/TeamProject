@@ -25,5 +25,10 @@ namespace TeamProject.Models
 			return get_Coin_Total();
 		}
 
+		public void Clear_Coin_Total()
+		{
+			base.Coin_Price_Total = 0;
+		}
+
 	}
 }

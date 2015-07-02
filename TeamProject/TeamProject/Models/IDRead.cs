@@ -19,7 +19,7 @@ namespace TeamProject.Models
 		private string Absolute_FIlePath = "";
 		private string Plane_ID="";
 		private string FilePath = "";
-		private string DB_File = @"C:\Users\Meganesoft\Documents\Visual Studio 2015\Projects\TeamProject\TeamProject\Resource\ictags_meteo.db";
+		private string DB_File = @"ictags.db";
 		public string ID_library {set;get;}
 		private int Denomination_Library {set;get;}
 
@@ -30,7 +30,8 @@ namespace TeamProject.Models
 
 		public IDRead()
 		{
-			FilePath = System.IO.Path.GetFullPath(Relative_FilePath);						
+			FilePath = System.IO.Path.GetFullPath(Relative_FilePath);
+			DB_File = System.IO.Path.GetFullPath(DB_File);						
 		}
 
 		

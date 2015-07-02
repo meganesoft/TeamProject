@@ -12,8 +12,6 @@ namespace TeamProject.ViewModels
 		//ゲーム内で処理する貨幣の金額	
 		private string _CoinCount;
 
-		private string Coin_Total;
-
 		public string CoinType {get;set;}
 
 		Coin Coin_OP = new Coin();
@@ -38,6 +36,11 @@ namespace TeamProject.ViewModels
 		public int Coin_Total_Child()
 		{
 			return PChild_OP.get_Coint_total_Child();
+		}
+
+		public void Clear_Coin_Total()
+		{
+			PChild_OP.Clear_Coin_Total();
 		}
 
 		

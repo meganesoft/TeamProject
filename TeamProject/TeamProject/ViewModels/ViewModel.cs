@@ -36,9 +36,6 @@ namespace TeamProject.ViewModels
 		public List<Coin_Index> IndexData { get; set; }
 		
 
-		
-		
-
 		private string price = "0";
 		private string price_q;
 		
@@ -83,9 +80,11 @@ namespace TeamProject.ViewModels
 
 		public async void Read_ID()
 		{
+			
 			await IR.Reading_Id();
 			Coin_Op.Coin_Index_Judgement(this.IndexData,IR.get_denomination());
 			Price_Operation.Add_Price(int.Parse(IR.get_denomination()));
+			
 		}
 
 		public void Judge()

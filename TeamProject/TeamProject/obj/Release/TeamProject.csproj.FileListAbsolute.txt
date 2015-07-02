@@ -23,3 +23,28 @@ C:\Users\MeganeSoft\Documents\Visual Studio 2015\Projects\TeamProject\TeamProjec
 C:\Users\MeganeSoft\Documents\Visual Studio 2015\Projects\TeamProject\TeamProject\obj\Release\TeamProject.csproj.GenerateResource.Cache
 C:\Users\MeganeSoft\Documents\Visual Studio 2015\Projects\TeamProject\TeamProject\obj\Release\TeamProject.exe
 C:\Users\MeganeSoft\Documents\Visual Studio 2015\Projects\TeamProject\TeamProject\obj\Release\TeamProject.pdb
+C:\Users\Meganesoft\Documents\git\TeamProject\TeamProject\TeamProject\bin\Release\TeamProject.exe.config
+C:\Users\Meganesoft\Documents\git\TeamProject\TeamProject\TeamProject\obj\Release\TeamProject.exe
+C:\Users\Meganesoft\Documents\git\TeamProject\TeamProject\TeamProject\obj\Release\TeamProject.pdb
+C:\Users\Meganesoft\Documents\git\TeamProject\TeamProject\TeamProject\bin\Release\TeamProject.exe
+C:\Users\Meganesoft\Documents\git\TeamProject\TeamProject\TeamProject\bin\Release\TeamProject.pdb
+C:\Users\Meganesoft\Documents\git\TeamProject\TeamProject\TeamProject\bin\Release\EntityFramework.dll
+C:\Users\Meganesoft\Documents\git\TeamProject\TeamProject\TeamProject\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Meganesoft\Documents\git\TeamProject\TeamProject\TeamProject\bin\Release\Livet.dll
+C:\Users\Meganesoft\Documents\git\TeamProject\TeamProject\TeamProject\bin\Release\Microsoft.Expression.Interactions.dll
+C:\Users\Meganesoft\Documents\git\TeamProject\TeamProject\TeamProject\bin\Release\System.Data.SQLite.dll
+C:\Users\Meganesoft\Documents\git\TeamProject\TeamProject\TeamProject\bin\Release\System.Data.SQLite.EF6.dll
+C:\Users\Meganesoft\Documents\git\TeamProject\TeamProject\TeamProject\bin\Release\System.Data.SQLite.Linq.dll
+C:\Users\Meganesoft\Documents\git\TeamProject\TeamProject\TeamProject\bin\Release\System.Windows.Interactivity.dll
+C:\Users\Meganesoft\Documents\git\TeamProject\TeamProject\TeamProject\bin\Release\EntityFramework.xml
+C:\Users\Meganesoft\Documents\git\TeamProject\TeamProject\TeamProject\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Meganesoft\Documents\git\TeamProject\TeamProject\TeamProject\bin\Release\Livet.xml
+C:\Users\Meganesoft\Documents\git\TeamProject\TeamProject\TeamProject\bin\Release\System.Data.SQLite.xml
+C:\Users\Meganesoft\Documents\git\TeamProject\TeamProject\TeamProject\obj\Release\Views\MainWindow.g.cs
+C:\Users\Meganesoft\Documents\git\TeamProject\TeamProject\TeamProject\obj\Release\App.g.cs
+C:\Users\Meganesoft\Documents\git\TeamProject\TeamProject\TeamProject\obj\Release\TeamProject_MarkupCompile.cache
+C:\Users\Meganesoft\Documents\git\TeamProject\TeamProject\TeamProject\obj\Release\TeamProject_MarkupCompile.lref
+C:\Users\Meganesoft\Documents\git\TeamProject\TeamProject\TeamProject\obj\Release\Views\MainWindow.baml
+C:\Users\Meganesoft\Documents\git\TeamProject\TeamProject\TeamProject\obj\Release\TeamProject.g.resources
+C:\Users\Meganesoft\Documents\git\TeamProject\TeamProject\TeamProject\obj\Release\TeamProject.Properties.Resources.resources
+C:\Users\Meganesoft\Documents\git\TeamProject\TeamProject\TeamProject\obj\Release\TeamProject.csproj.GenerateResource.Cache
