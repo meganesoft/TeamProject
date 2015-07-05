@@ -16,6 +16,7 @@ namespace TeamProject.ViewModels
 
 		Coin Coin_OP = new Coin();
 		PriceChild PChild_OP = new PriceChild();
+		
 
 		public string CoinCount
 		{

@@ -59,6 +59,7 @@ namespace TeamProject.Models
 
 		public void Coin_Index_Clear(List<Coin_Index> Coin_Index_List)
 		{
+			Instant_Coin_Total = 0;
 			Coin_Index_List.ForEach(x =>
 			{
 				x.CoinCount = "0";
