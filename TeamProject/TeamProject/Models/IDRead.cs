@@ -63,6 +63,7 @@ namespace TeamProject.Models
 
 		public async Task Reading_Id()
 		{	
+			
 			if(p.HasExited)
 			{
 				this.p = Process.Start(psInfo);
@@ -71,6 +72,7 @@ namespace TeamProject.Models
 			p.WaitForExit();
 			Plane_ID = Plane_ID.TrimEnd();
 			Call_DataBase();
+			
 		}
 
 		//SQLをつかってデータベースからIDタグのIDを読みだしてる
