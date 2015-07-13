@@ -19,7 +19,7 @@ namespace TeamProject.Models
 		private string Absolute_FIlePath = "";
 		private string Plane_ID="";
 		private string FilePath = "";
-		private string DB_File = @"ictags.db";
+		private string DB_File = @"Resource\ictags.db";
 		public string ID_library {set;get;}
 		private int Denomination_Library {set;get;}
 
@@ -62,9 +62,8 @@ namespace TeamProject.Models
 		}
 
 		public async Task Reading_Id()
-		{	
-			
-			if(p.HasExited)
+		{			
+			if (p.HasExited)
 			{
 				this.p = Process.Start(psInfo);
 			}
@@ -72,7 +71,7 @@ namespace TeamProject.Models
 			p.WaitForExit();
 			Plane_ID = Plane_ID.TrimEnd();
 			Call_DataBase();
-			
+							
 		}
 
 		//SQLをつかってデータベースからIDタグのIDを読みだしてる
