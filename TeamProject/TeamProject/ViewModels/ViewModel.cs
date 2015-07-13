@@ -81,11 +81,11 @@ namespace TeamProject.ViewModels
 		public async void Read_ID()
 		{
 			await Task.Run(async () =>
-			  {
-				  await IR.Reading_Id();
-				  Coin_Op.Coin_Index_Judgement(this.IndexData, IR.get_denomination());
-				  Price_Operation.Add_Price(int.Parse(IR.get_denomination()));
-			  });
+			{
+				await IR.Reading_Id();
+				Coin_Op.Coin_Index_Judgement(this.IndexData, IR.get_denomination());
+				Price_Operation.Add_Price(int.Parse(IR.get_denomination()));
+			});
 		}
 
 		public void Judge()
