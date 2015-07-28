@@ -10,8 +10,7 @@ namespace TeamProject.ViewModels
 {
 	class ViewModel :ViewModelBase
 	{
-		//モデルを書く(未実装)
-		TestModel tm = new TestModel();
+		
 		//PasoriからDBに接続するクラス
 		IDRead IR;
 		//ゲーム提示用ランダムクラス
@@ -22,6 +21,9 @@ namespace TeamProject.ViewModels
 		Coin Coin_Op = new Coin();
 		//項目クラス
 		Coin_Index Coin_Index_Op = new Coin_Index();
+		//テキストクラス
+		Text_ViewModel Text_Op = new Text_ViewModel();
+
 
 		//コマンドクラス
 		//読み取り用コマンド
@@ -32,6 +34,8 @@ namespace TeamProject.ViewModels
 		public SampleCommand Index_Action { get; set; }
 		//終了項目
 		public SampleCommand ShutDown { get; set; }
+		//テキスト変更バインディング
+		public SampleCommand TextChange_Q { get; set; }
 		//バインディングリスト
 		public List<Coin_Index> IndexData { get; set; }
 		
@@ -69,6 +73,7 @@ namespace TeamProject.ViewModels
 			this.JudgeTotal = new SampleCommand(new EventDelegare(Judge));
 			this.Index_Action = new SampleCommand(new EventDelegare(Coin_Index_Action));
 			this.ShutDown = new SampleCommand(new EventDelegare(Window_Close));
+			this.TextChange_Q = new SampleCommand(new EventDelegare(Text_Change));
 			
 			this.IndexData = Coin_Op.Coin_Index_create();	
 			IR = new IDRead();			
@@ -91,6 +96,11 @@ namespace TeamProject.ViewModels
 				} 
 			});
 		}
+		public void Text_Change()
+		{
+			Price_Q_Bind = Text_Op.get_Change_Text();
+		}
+
 
 		public void Judge()
 		{

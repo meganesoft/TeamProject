@@ -91,11 +91,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Models\PriceChild.cs" />
-    <Compile Include="Models\Setting.cs" />
-    <Compile Include="Models\TestModel.cs" />
     <Compile Include="ViewModels\Coin_Index.cs" />
     <Compile Include="ViewModels\Coin_ViewModel.cs" />
     <Compile Include="ViewModels\SampleCommand.cs" />
+    <Compile Include="ViewModels\Text_ViewModel.cs" />
     <Compile Include="ViewModels\ViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Page Include="Views\MainWindow.xaml">
