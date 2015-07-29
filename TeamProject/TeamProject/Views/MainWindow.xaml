@@ -11,7 +11,7 @@
         xmlns:l="http://schemas.livet-mvvm.net/2011/wpf"
         mc:Ignorable="d"
         ContentRendered="Window_ContentRendered"
-        Title="MainWindow" Height="500" Width="725">
+        Title="金種計算" Height="500" Width="725">
     <Window.Resources>
         <Storyboard x:Key="PriceAnimation">
             <DoubleAnimation
@@ -20,6 +20,7 @@
                 To="300"
                 Duration="0:0:5"/>
         </Storyboard>
+        
     </Window.Resources>
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Closed">
@@ -44,7 +45,7 @@
                     <Label x:Name="label" Canvas.Left="10" Background="YellowGreen" Canvas.Top="10" 
     					Content="{Binding Price_Q_Bind}" Foreground="White" FontSize="100"  Loaded="label_Loaded" HorizontalContentAlignment="Center" Margin="2"/>
                 </Border>
-                <Button x:Name="button" Content="Read" Canvas.Left="617" Canvas.Top="247" Width="75" Click="button_Click_1">
+                <Button x:Name="button" Content="Read" Canvas.Left="603" Canvas.Top="224" Width="89" Click="button_Click_1" Height="62">
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border Background="LightBlue" CornerRadius="30" Padding="10" BorderThickness="0,0,3,3" BorderBrush="Gray">
@@ -59,7 +60,7 @@
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </Button>
-                <Button x:Name="button1" Content="Button" Canvas.Left="510" Canvas.Top="247" Width="76">
+                <Button x:Name="button1" Content="Button" Canvas.Left="477" Canvas.Top="224" Width="90" Height="62">
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border Background="LightBlue" CornerRadius="30" Padding="10" BorderThickness="0,0,3,3" BorderBrush="Gray">
@@ -73,13 +74,14 @@
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </Button>
-                <TextBox x:Name="textBox" Height="18.4" Canvas.Left="155.6" TextWrapping="Wrap" Text="{Binding VMText}" Canvas.Top="212" Width="154.4">
+                <TextBox x:Name="textBox" Height="19" Canvas.Left="145" TextWrapping="Wrap" Text="{Binding VMText}" Canvas.Top="210" Width="155">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="TextChanged">
-                            <i:InvokeCommandAction Command="{Binding TextChange_Q}"/>                         
+                            <i:InvokeCommandAction Command="{Binding TextChange_Q}"/>
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </TextBox>
+                <Label x:Name="label1" Content="(数字のみ)" Canvas.Left="305" Canvas.Top="207" Height="31"/>
             </Canvas>
 
         </Viewbox>
@@ -99,19 +101,21 @@
                     <DataTemplate >
                         <Border BorderBrush="DimGray" BorderThickness="2">
                             <TextBlock Margin="5"
-        						Width="80"><i:Interaction.Triggers>
-        							<i:EventTrigger EventName="Click">
-        								<i:InvokeCommandAction Command="{Binding Index_Action}"/>
-        							</i:EventTrigger>
-        							<i:EventTrigger EventName="MouseUp">
-        								<l:LivetCallMethodAction MethodTarget="{Binding}"
-        									MethodName="Index_Count_Add"/>
-        							</i:EventTrigger>
-        						</i:Interaction.Triggers><Run Text="{Binding CoinType}" FontSize="20"/><Run Text=" "/><Run Text=":円" FontSize="20"/><LineBreak/><Run Text="{Binding CoinCount}" FontSize="20"/><Run Text=" "/><Run Text=":枚" FontSize="20"/></TextBlock>
+        						    Width="80"><i:Interaction.Triggers>
+        						    	<i:EventTrigger EventName="Click">
+        							    	<i:InvokeCommandAction Command="{Binding Index_Action}"/>
+        							    </i:EventTrigger>
+        						    	<i:EventTrigger EventName="MouseUp">
+        							    	<l:LivetCallMethodAction MethodTarget="{Binding}"
+        							    		MethodName="Index_Count_Add"/>
+        						    	</i:EventTrigger>
+        						    </i:Interaction.Triggers><Run Text="{Binding CoinType}" FontSize="20"/><Run Text=" "/><Run Text=":円" FontSize="20"/><LineBreak/><Run Text="{Binding CoinCount}" FontSize="20" FontWeight="Bold" /><Run Text=" "/><Run Text=":枚" FontSize="20" FontWeight="Bold" />
+                            </TextBlock>
                         </Border>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
+            
         </Viewbox>
 
         <!--項目を作るYO!-->
