@@ -50,7 +50,10 @@ namespace TeamProject.Models
 				//丁度払えました
 				System.Windows.MessageBox.Show("丁度になります");
 			}
+		
 		}
+
+		
 
 		public void Add_Coin_Total(int Coin)
 		{

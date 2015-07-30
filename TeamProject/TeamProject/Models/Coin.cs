@@ -6,14 +6,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using TeamProject.ViewModels;
+using System.Windows.Media;
 
 namespace TeamProject.Models
 {
 	class Coin
 	{
 		//数値判定用リスト
-		private List<string> Index_Palameter = new List<string> { "1","5", "10", "50", "100", "500","1000"};
-
+		private List<string> Index_Palameter = new List<string> {"1","5", "10", "50", "100", "500","1000"};
+		private List<string> Image_Index = new List<string> {"/Image/s_1.png","/Image/s_5.png","/Image/s_10.png","/Image/s_50.png","/Image/s_100.png","/Image/s_500.png","s_money01_a01.png"};
+		
 		//Plus_Coin用の変数
 		private int PlusOne = 1;
 
@@ -31,15 +33,14 @@ namespace TeamProject.Models
 		public List<Coin_Index> Coin_Index_create()
 		{
 			return new List<Coin_Index>
-			{
-				
-				new Coin_Index {CoinType = Index_Palameter[0],CoinCount = "0" },
-				new Coin_Index {CoinType = Index_Palameter[1],CoinCount = "0" },
-				new Coin_Index {CoinType = Index_Palameter[2],CoinCount = "0" },
-				new Coin_Index {CoinType = Index_Palameter[3],CoinCount = "0" },
-				new Coin_Index {CoinType = Index_Palameter[4],CoinCount = "0" },
-				new Coin_Index {CoinType = Index_Palameter[5],CoinCount = "0" },
-				new Coin_Index {CoinType = Index_Palameter[6],CoinCount = "0" },
+			{		
+				new Coin_Index {CoinType = Index_Palameter[0],CoinCount = "0",ImageSource = Image_Index[0] },
+				new Coin_Index {CoinType = Index_Palameter[1],CoinCount = "0",ImageSource = Image_Index[1] },
+				new Coin_Index {CoinType = Index_Palameter[2],CoinCount = "0",ImageSource = Image_Index[2] },
+				new Coin_Index {CoinType = Index_Palameter[3],CoinCount = "0",ImageSource = Image_Index[3] },
+				new Coin_Index {CoinType = Index_Palameter[4],CoinCount = "0",ImageSource = Image_Index[4] },
+				new Coin_Index {CoinType = Index_Palameter[5],CoinCount = "0",ImageSource = Image_Index[5] },
+				new Coin_Index {CoinType = Index_Palameter[6],CoinCount = "0",ImageSource = Image_Index[6] },
 			};
 		}
 		
@@ -48,8 +49,7 @@ namespace TeamProject.Models
 		{
 			//読み込んできた値と一致するCoin.Typeを含むリスト項目を抽出する
 			Coin_Index Coin_Found_Index = Coin_Index_List.Find(x => x.CoinType == Judege_Number);
-			Coin_Found_Index.CoinCount = Return_Plus_Coin(Coin_Found_Index.CoinCount);	
-						
+			Coin_Found_Index.CoinCount = Return_Plus_Coin(Coin_Found_Index.CoinCount);						
 		}
 
 		public string Return_Plus_Coin(string Coin_Index_Count)
