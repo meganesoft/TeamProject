@@ -4,16 +4,28 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 C:\Users\Kopoona\Documents\SourceTree\TeamProject\TeamProject\TeamProject\obj\Debug\
+=======
+C:\Users\MeganeSoft\Documents\git\TeamProject\TeamProject\TeamProject\obj\Debug\
+>>>>>>> c2bff2f3b9337fa422d06efaf9745410876e5130
 TeamProject
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 C:\Users\Kopoona\Documents\SourceTree\TeamProject\TeamProject\TeamProject\App.xaml
 11892971807
 
 22-1124209602
 23-771440612
+=======
+C:\Users\MeganeSoft\Documents\git\TeamProject\TeamProject\TeamProject\App.xaml
+11892971807
+
+21-1437632524
+23711798973
+>>>>>>> c2bff2f3b9337fa422d06efaf9745410876e5130
 Views\MainWindow.xaml;
 
 True

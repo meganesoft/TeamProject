@@ -12,7 +12,7 @@ namespace TeamProject.Models
 	class Coin
 	{
 		//数値判定用リスト
-		private List<string> Index_Palameter = new List<string> { "1", "10", "50", "100", "500","1000"};
+		private List<string> Index_Palameter = new List<string> { "1","5", "10", "50", "100", "500","1000"};
 
 		//Plus_Coin用の変数
 		private int PlusOne = 1;
@@ -39,6 +39,7 @@ namespace TeamProject.Models
 				new Coin_Index {CoinType = Index_Palameter[3],CoinCount = "0" },
 				new Coin_Index {CoinType = Index_Palameter[4],CoinCount = "0" },
 				new Coin_Index {CoinType = Index_Palameter[5],CoinCount = "0" },
+				new Coin_Index {CoinType = Index_Palameter[6],CoinCount = "0" },
 			};
 		}
 		

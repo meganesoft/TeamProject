@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TeamProject.Models;
+using System.Drawing;
 
 namespace TeamProject.ViewModels
 {
@@ -13,6 +14,7 @@ namespace TeamProject.ViewModels
 		private string _CoinCount;
 
 		public string CoinType {get;set;}
+		
 
 		Coin Coin_OP = new Coin();
 		PriceChild PChild_OP = new PriceChild();
