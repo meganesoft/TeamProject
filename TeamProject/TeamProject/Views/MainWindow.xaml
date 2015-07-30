@@ -49,7 +49,7 @@
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border Background="LightBlue" CornerRadius="30" Padding="10" BorderThickness="0,0,3,3" BorderBrush="Gray">
-                                <TextBlock Text="読み込み" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBlock Text="読み込み" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold"/>
                             </Border>
                         </ControlTemplate>
                     </Button.Template>
@@ -60,11 +60,11 @@
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </Button>
-                <Button x:Name="button1" Content="Button" Canvas.Left="477" Canvas.Top="224" Width="90" Height="62">
+                <Button x:Name="button1" Content="Button" Canvas.Left="477" Canvas.Top="224" Width="90" Height="62" >
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border Background="LightBlue" CornerRadius="30" Padding="10" BorderThickness="0,0,3,3" BorderBrush="Gray">
-                                <TextBlock Text="精算" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBlock Text="精算" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold"/>
                             </Border>
                         </ControlTemplate>
                     </Button.Template>
