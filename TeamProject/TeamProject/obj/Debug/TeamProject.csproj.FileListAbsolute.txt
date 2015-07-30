@@ -76,3 +76,6 @@ C:\Users\Meganesoft\Documents\git\TeamProject2\TeamProject\TeamProject\obj\Debug
 C:\Users\Meganesoft\Documents\git\TeamProject2\TeamProject\TeamProject\obj\Debug\TeamProject.g.resources
 C:\Users\Meganesoft\Documents\git\TeamProject2\TeamProject\TeamProject\obj\Debug\TeamProject.Properties.Resources.resources
 C:\Users\Meganesoft\Documents\git\TeamProject2\TeamProject\TeamProject\obj\Debug\TeamProject.csproj.GenerateResource.Cache
+C:\Users\Kopoona\Documents\SourceTree\TeamProject\TeamProject\TeamProject\bin\Debug\TeamProject.exe.config
+C:\Users\Kopoona\Documents\SourceTree\TeamProject\TeamProject\TeamProject\obj\Debug\TeamProject.exe
+C:\Users\Kopoona\Documents\SourceTree\TeamProject\TeamProject\TeamProject\obj\Debug\TeamProject.pdb
