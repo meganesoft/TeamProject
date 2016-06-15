@@ -22,6 +22,7 @@
         </Storyboard>
         
     </Window.Resources>
+    
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Closed">
             <i:InvokeCommandAction Command="{Binding ShutDown}" />
