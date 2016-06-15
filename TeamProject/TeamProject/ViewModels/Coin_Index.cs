@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TeamProject.Models;
 using System.Drawing;
+using System.Windows.Media;
 
 namespace TeamProject.ViewModels
 {
@@ -14,7 +15,8 @@ namespace TeamProject.ViewModels
 		private string _CoinCount;
 
 		public string CoinType {get;set;}
-		
+
+		public string ImageSource { get; set; }
 
 		Coin Coin_OP = new Coin();
 		PriceChild PChild_OP = new PriceChild();
@@ -29,6 +31,7 @@ namespace TeamProject.ViewModels
 				NotifyPropertyChanged("CoinCount");
 			}
 		}
+
 
 		public void Index_Count_Add()
 		{

@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Input;
 using TeamProject.Models;
 
 namespace TeamProject.ViewModels
@@ -63,9 +60,7 @@ namespace TeamProject.ViewModels
 				this.price_q = value;
 				NotifyPropertyChanged("Price_Q_Bind");
 			}
-		}
-
-		
+		}		
 
 		public ViewModel()
 		{			
